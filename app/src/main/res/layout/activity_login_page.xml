@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login_page"
+    android:background="@drawable/gradient_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/nice_blue"
+        android:textSize="40sp"
+        android:fontFamily="@font/aclonica"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="30dp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/get_email"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="Enter email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/ic_baseline_account_circle"
+        android:paddingLeft="10dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/get_pass"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="Enter password"
+        android:layout_below="@+id/get_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:paddingLeft="10dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/get_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="login"
+        android:backgroundTint="@color/nice_blue"></Button>
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create new account"
+        android:textColor="@color/red"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp">
+    </TextView>
+</RelativeLayout>

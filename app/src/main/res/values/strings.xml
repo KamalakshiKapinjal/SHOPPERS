@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">E-commerce</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="first_slide">Choose your product</string>
+    <string name="second_slide">Fast delivery</string>
+    <string name="third_slide">Good services</string>
+    <string name="description">some descriptions</string>
+</resources>
