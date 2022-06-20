@@ -2,5 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
+        <item>@font/amethysta</item>
+        <item>@font/montez</item>
+        <item>@font/roboto_slab</item>
     </array>
 </resources>

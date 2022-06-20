@@ -1,4 +1,4 @@
-package com.example.travellers;
+package com.example.travellers.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.travellers.R;
 
 public class MainActivity extends AppCompatActivity {
 

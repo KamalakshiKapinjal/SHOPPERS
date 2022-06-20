@@ -1,15 +1,17 @@
-package com.example.travellers;
+package com.example.travellers.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.travellers.R;
 
 public class SliderAdapter extends PagerAdapter {
     Context context;
@@ -43,7 +45,7 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull  View view, @NonNull Object object) {
-        return view==(RelativeLayout)object;
+        return view==(ConstraintLayout)object;
     }
 
     @NonNull
@@ -67,6 +69,6 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull  ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((RelativeLayout)object);
+        container.removeView((ConstraintLayout)object);
     }
 }

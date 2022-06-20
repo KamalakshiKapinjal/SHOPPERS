@@ -1,4 +1,4 @@
-package com.example.travellers;
+package com.example.travellers.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.travellers.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -38,8 +39,7 @@ public class login_page extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                getSupportActionBar().hide();
+                //getSupportActionBar().hide();
 
                 String userEmail = email.getText().toString();
                 String userPassword = password.getText().toString();
