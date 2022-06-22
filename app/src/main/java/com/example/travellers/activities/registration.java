@@ -38,7 +38,7 @@ public class registration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                getSupportActionBar().hide();
+               // getSupportActionBar().hide();
                 
                 String username = name.getText().toString();
                 String userEmail = email.getText().toString();

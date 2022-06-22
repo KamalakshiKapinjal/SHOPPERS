@@ -1,12 +1,14 @@
 package com.example.travellers.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travellers.R;
@@ -18,6 +20,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
 
       Context context;
       List<MyCartModel> cartModelList;
+      int totalAmount=0;
 
     public MyCartAdapter(Context context, List<MyCartModel> cartModelList) {
         this.context=context;
@@ -43,7 +46,11 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
         holder.totalQuantity.setText(cartModelList.get(position).getTotalQuantity());
 
         //total amount pass to cart activity
+        totalAmount=totalAmount+cartModelList.get(position).getTotalPrice();
+        Intent intent=new Intent("MyTotalPrice");
+        intent.putExtra("totalAmount",totalAmount);
 
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
     }
 

@@ -1,5 +1,6 @@
 package com.example.travellers.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.example.travellers.R;
 import com.example.travellers.models.NewProductModels;
 import com.example.travellers.models.PopularProductsModel;
-import com.example.travellers.models.ShowAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +32,7 @@ public class DetailedActivity extends AppCompatActivity {
 
     ImageView detailedImg;
     TextView rating, name, description, price,quantity;
-    Button addToCart;
+    Button addToCart,buyNow;
     ImageView addItems, removeItems;
     int totalQuantity=1;
     int totalPrice=0;
@@ -48,8 +48,6 @@ public class DetailedActivity extends AppCompatActivity {
     //popular products
     PopularProductsModel popularProductsModel=null;
 
-    //show all products
-    ShowAllModel showAllModel=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +57,13 @@ public class DetailedActivity extends AppCompatActivity {
         toolbar=findViewById(R.id.detailed_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         firestore = FirebaseFirestore.getInstance();
         auth=FirebaseAuth.getInstance();
@@ -71,10 +76,6 @@ public class DetailedActivity extends AppCompatActivity {
             popularProductsModel=(PopularProductsModel) obj;
         }
 
-        else if(obj instanceof ShowAllModel){
-            showAllModel=(ShowAllModel) obj;
-        }
-
         detailedImg = findViewById(R.id.detailed_img);
         quantity=findViewById(R.id.quantity);
         rating = findViewById(R.id.rating);
@@ -84,6 +85,7 @@ public class DetailedActivity extends AppCompatActivity {
         addItems = findViewById(R.id.add_item);
         removeItems = findViewById(R.id.remove_item);
         addToCart = findViewById(R.id.add_to_cart);
+        buyNow=findViewById(R.id.buy_now_detailed);
 
         //new products
             if(newProductModels!=null){
@@ -109,17 +111,22 @@ public class DetailedActivity extends AppCompatActivity {
             totalPrice= popularProductsModel.getPrice()* totalQuantity;
         }
 
-        //show all products
-        if(showAllModel!=null){
-            Glide.with(getApplicationContext()).load(showAllModel.getImg_url()).into(detailedImg);
-            name.setText(showAllModel.getName());
-            rating.setText(showAllModel.getRating());
-            description.setText(showAllModel.getDescription());
-            price.setText(String.valueOf(showAllModel.getPrice()));
-            name.setText(showAllModel.getName());
+       //buy now
+        buyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent=new Intent(DetailedActivity.this, AddAddressActivity.class);
 
-            totalPrice= showAllModel.getPrice()* totalQuantity;
-        }
+                if(newProductModels!=null){
+                    intent.putExtra("item",newProductModels);
+                }
+                if(popularProductsModel!=null){
+                    intent.putExtra("item",popularProductsModel);
+                }
+
+                startActivity(intent);
+            }
+        });
 
         //add to cart
         addToCart.setOnClickListener(new View.OnClickListener() {
@@ -146,9 +153,6 @@ public class DetailedActivity extends AppCompatActivity {
                         totalPrice=popularProductsModel.getPrice()* totalQuantity;
                     }
 
-                    if(showAllModel!=null){
-                        totalPrice= showAllModel.getPrice()* totalQuantity;
-                    }
                 }
             }
         });

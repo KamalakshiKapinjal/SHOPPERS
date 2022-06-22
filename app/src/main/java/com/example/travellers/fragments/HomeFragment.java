@@ -1,6 +1,5 @@
 package com.example.travellers.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +17,6 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.travellers.R;
-import com.example.travellers.activities.ShowAllActivity;
 import com.example.travellers.adapter.CategoryAdapter;
 import com.example.travellers.adapter.NewProductsAdapter;
 import com.example.travellers.adapter.PopularProductsAdapter;
@@ -38,6 +36,8 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     TextView catShowAll,newShowAll,popularShowAll;
+
+    TextView cat;
 
     RecyclerView catRecyclerView,newProductRecyclerView,popularRecyclerView;
     //category recyclerview
@@ -71,8 +71,10 @@ public class HomeFragment extends Fragment {
         catRecyclerView=root.findViewById(R.id.rec_category);
         newProductRecyclerView=root.findViewById(R.id.new_product_rec);
         popularRecyclerView=root.findViewById(R.id.popular_rec);
-        newShowAll=root.findViewById(R.id.newProducts_see_all);
-        popularShowAll=root.findViewById(R.id.popular_see_all);
+        //newShowAll=root.findViewById(R.id.newProducts_see_all);
+       // popularShowAll=root.findViewById(R.id.popular_see_all);
+
+
 
 //        catShowAll.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -82,21 +84,23 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
-        newShowAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(getContext(), ShowAllActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        popularShowAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(getContext(), ShowAllActivity.class);
-                startActivity(intent);
-            }
-        });
+
+//        newShowAll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent =new Intent(getContext(), ShowAllActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+//        popularShowAll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent =new Intent(getContext(), ShowAllActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         //image slider
         ImageSlider imageSlider=root.findViewById(R.id.image_slider);
