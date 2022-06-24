@@ -29,7 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity<myCartModel> extends AppCompatActivity {
 
     //int overallTotalAmount;
     TextView overallAmount;
@@ -47,6 +47,7 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
+
 
         buynow=findViewById(R.id.buy_now);
 

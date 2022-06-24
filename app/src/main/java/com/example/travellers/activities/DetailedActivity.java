@@ -1,6 +1,5 @@
 package com.example.travellers.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -85,7 +84,7 @@ public class DetailedActivity extends AppCompatActivity {
         addItems = findViewById(R.id.add_item);
         removeItems = findViewById(R.id.remove_item);
         addToCart = findViewById(R.id.add_to_cart);
-        buyNow=findViewById(R.id.buy_now_detailed);
+
 
         //new products
             if(newProductModels!=null){
@@ -112,21 +111,21 @@ public class DetailedActivity extends AppCompatActivity {
         }
 
        //buy now
-        buyNow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intent=new Intent(DetailedActivity.this, AddAddressActivity.class);
-
-                if(newProductModels!=null){
-                    intent.putExtra("item",newProductModels);
-                }
-                if(popularProductsModel!=null){
-                    intent.putExtra("item",popularProductsModel);
-                }
-
-                startActivity(intent);
-            }
-        });
+//        buyNow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               Intent intent=new Intent(DetailedActivity.this, AddAddressActivity.class);
+//
+//                if(newProductModels!=null){
+//                    intent.putExtra("item",newProductModels);
+//                }
+//                if(popularProductsModel!=null){
+//                    intent.putExtra("item",popularProductsModel);
+//                }
+//
+//                startActivity(intent);
+//            }
+//        });
 
         //add to cart
         addToCart.setOnClickListener(new View.OnClickListener() {

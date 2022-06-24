@@ -12,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.travellers.R;
-import com.example.travellers.models.NewProductModels;
-import com.example.travellers.models.PopularProductsModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,6 +48,9 @@ public class AddAddressActivity extends AppCompatActivity {
 
         //get data from detailed activity
         Object obj=getIntent().getSerializableExtra("item");
+
+        //get data from cart
+        Object obj1=getIntent().getSerializableExtra("cartItem");
 
         auth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
@@ -120,20 +121,32 @@ public class AddAddressActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                double amount=0.0;
-                if(obj instanceof NewProductModels){
-                    NewProductModels newProductModels=(NewProductModels) obj;
-                    amount= newProductModels.getPrice();
-                }
+                double amount = 0.0;
+//                if(obj instanceof NewProductModels){
+//                    NewProductModels newProductModels=(NewProductModels) obj;
+//                    amount= newProductModels.getPrice();
+//                }
+//
+//                if(obj instanceof PopularProductsModel){
+//                    PopularProductsModel popularProductsModel=(PopularProductsModel) obj;
+//                    amount= popularProductsModel.getPrice();
+//                }
+//                if(obj instanceof )
+//
+                String userName = name.getText().toString();
+                String userCity = city.getText().toString();
+                String userAddress = address.getText().toString();
+                String userCode = postalCode.getText().toString();
+                String userPhone = phoneNumber.getText().toString();
+                if (userName.isEmpty() || userAddress.isEmpty() || userCity .isEmpty() || userCode.isEmpty() || userPhone.isEmpty()) {
 
-                if(obj instanceof PopularProductsModel){
-                    PopularProductsModel popularProductsModel=(PopularProductsModel) obj;
-                    amount= popularProductsModel.getPrice();
-                }
+                    Toast.makeText(AddAddressActivity.this, "Kindly fill all fields", Toast.LENGTH_SHORT).show();
+                } else {
 
-                Intent intent=new Intent(AddAddressActivity.this,PaymentActivity.class);
-                intent.putExtra("amount",amount);
-                startActivity(intent);
+                    Intent intent = new Intent(AddAddressActivity.this, PaymentActivity.class);
+//                intent.putExtra("amount",amount);
+                    startActivity(intent);
+                }
             }
         });
 

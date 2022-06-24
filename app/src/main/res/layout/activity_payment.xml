@@ -17,31 +17,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Payment Detailed"/>
 
-    <TextView
-        android:id="@+id/text_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"
-        android:text="TotalAmount:"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/total_amt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/payment_toolbar" />
+<!--    <TextView-->
+<!--        android:id="@+id/text_total"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="70dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:text="TotalAmount:"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/total_amt"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/payment_toolbar" />-->
 
-    <TextView
-        android:id="@+id/total_amt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="76dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="Rs 00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/payment_toolbar" />
+<!--    <TextView-->
+<!--        android:id="@+id/total_amt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="76dp"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="Rs 00"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/payment_toolbar" />-->
 
     <androidx.cardview.widget.CardView
         android:padding="20dp"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_total">
+        app:layout_constraintTop_toBottomOf="@+id/payment_toolbar">
         <RelativeLayout
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
