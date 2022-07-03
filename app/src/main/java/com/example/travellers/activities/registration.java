@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class registration extends AppCompatActivity {
-    private EditText name, email, password;
+    private EditText name, email, password,address,phone;
     private Button sign_up;
     private FirebaseAuth auth;
 
@@ -31,6 +31,8 @@ public class registration extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         sign_up = findViewById(R.id.signup);
+        address=findViewById(R.id.address);
+        phone=findViewById(R.id.phone);
 
         auth=FirebaseAuth.getInstance();
 
@@ -43,6 +45,8 @@ public class registration extends AppCompatActivity {
                 String username = name.getText().toString();
                 String userEmail = email.getText().toString();
                 String userPassword = password.getText().toString();
+                String userAddress = address.getText().toString();
+                String userPhone = phone.getText().toString();
 
                 if (TextUtils.isEmpty(username)) {
                     name.setError("Field cannot be empty!");
@@ -63,6 +67,16 @@ public class registration extends AppCompatActivity {
                     return;
                 }
 
+                if (TextUtils.isEmpty(userAddress)) {
+                    address.setError("Field cannot be empty!");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(userPhone)) {
+                    phone.setError("Field cannot be empty!");
+                    return;
+                }
+
                 auth.createUserWithEmailAndPassword(userEmail,userPassword)
                         .addOnCompleteListener(registration.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -74,6 +88,8 @@ public class registration extends AppCompatActivity {
                                     name.setText("");
                                     email.setText("");
                                     password.setText("");
+                                    address.setText("");
+                                    phone.setText("");
                                 }
 
                                 else{

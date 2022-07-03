@@ -94,7 +94,7 @@ public class CartActivity<myCartModel> extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(CartActivity.this,AddAddressActivity.class);
+                Intent intent=new Intent(CartActivity.this,PaymentActivity.class);
                 startActivity(intent);
             }
         });

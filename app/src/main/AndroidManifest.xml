@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Travellers">
         <activity android:name=".activities.PaymentActivity"></activity>
-        <activity android:name=".activities.AddAddressActivity" />
         <activity android:name=".activities.CartActivity" />
         <activity android:name=".activities.DetailedActivity" />
         <activity android:name=".activities.Home" />

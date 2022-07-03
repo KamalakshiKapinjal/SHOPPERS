@@ -53,12 +53,42 @@
         android:layout_centerHorizontal="true"
         android:hint="Enter password"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/address"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:background="@drawable/edit_text_bg"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
        android:paddingLeft="10dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter address"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/phone"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/ic_baseline_account_circle"
+        android:paddingLeft="10dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter phone number"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/email"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/ic_baseline_account_circle"
+        android:paddingLeft="10dp">
     </EditText>
 
 
@@ -69,7 +99,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:text="Register"
         app:backgroundTint="@color/nice_blue"></Button>
 
